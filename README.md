@@ -52,5 +52,7 @@ Window {
     }
 }
 ```
+NOTE : 
+1. height and width values are device independent units, sometimes measured in DIPs.
+2. Window is needed in case you are developing a standalone application else in case of component level design you do not need it.
 
-NOTE : height and width values are device independent units, sometimes measured in DIPs.
