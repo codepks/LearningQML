@@ -1,6 +1,7 @@
 # LearningQML
 
 One can learn a lot from QML seeing the examples from QT createor.
+source : Udemy : QML For Beginners
 
 # Sample Code
 
@@ -56,3 +57,4 @@ NOTE :
 1. height and width values are device independent units, sometimes measured in DIPs.
 2. Window is needed in case you are developing a standalone application else in case of component level design you do not need it.
 
+# Basics
