@@ -2,8 +2,9 @@
 
 One can learn a lot from QML seeing the examples from QT createor.
 
-# C++ Backend
+# Sample Code
 
+## C++ Backend
 ```
 QGuiApplication app(argc, argv);
 QQmlApplicationEngine engine;
@@ -26,3 +27,30 @@ return app.exec();
 
 Finally we are loading the engine.
 
+## QML Code
+
+```
+import QtQuick 2.0
+
+Window {
+    visible: true
+    height: 200
+    width: 200
+
+    Rectangle {
+        id: page
+        width: 100; height: 100
+        color: "lightgray"
+        anchors.centerIn: parent
+
+        Text {
+            id: helloText
+            text: "Hello world!"
+            anchors.centerIn: page
+            font.pointSize: 10;
+        }
+    }
+}
+```
+
+NOTE : height and width values are device independent units, sometimes measured in DIPs.
