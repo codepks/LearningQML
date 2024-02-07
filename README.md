@@ -128,15 +128,15 @@ It is a QML Type, just like rectangle and handles taps and cliks.
 source of QML types : https://doc.qt.io/qt-6/qtquick-qmlmodule.html
 
 ```
-Rectangle    {
-        id : rect1
-        width: 100
-        height : 100
-        color : tapHandleText.pressed ? "red" : "blue"
-        opacity: tapHandleText.pressed ? 0.5 : 1
-
-        TapHandler{
-            id : tapHandleText
-        }
+Rectangle  {
+    id : rect1
+    width: 100
+    height : 100
+    color : tapHandleText.pressed ? "red" : "blue"
+    opacity: tapHandleText.pressed ? 0.5 : 1
+    
+    TapHandler{
+        id : tapHandleText
     }
+}
 ```
