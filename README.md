@@ -58,3 +58,27 @@ NOTE :
 2. Window is needed in case you are developing a standalone application else in case of component level design you do not need it.
 
 # Basics
+1. width : parent.width is a **property binding**
+2. The component at the top is parent
+3. QT uses parent child memory hirerchy for memory management, so if parent is destroyed, all the children are destroyed. That's why multiple parent thing does't work
+
+## Signal and Slots in QML
+```
+Window{
+    visible: true
+    height: 200
+    width: 200
+    TextInput    {
+        id : editText
+        text: "Default Text"
+        anchors.centerIn: parent
+    }
+    Text {
+        id: nameText
+        text: editText.text
+        font.pixelSize: 25
+    }
+}
+```
+
+In the code above text of id nameText is binded with text of TextInput using property Binding. Changes mades in exitText will reflect in nameText. This behaves similar to *signal and slots* .
