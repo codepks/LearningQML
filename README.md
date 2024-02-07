@@ -81,4 +81,62 @@ Window{
 }
 ```
 
-In the code above text of id nameText is binded with text of TextInput using property Binding. Changes mades in exitText will reflect in nameText. This behaves similar to *signal and slots* .
+In the code above text of id nameText is binded with text of TextInput using *Property Binding* . Changes mades in exitText will reflect in nameText. This behaves similar to *signal and slots* .
+
+## X,Y, Z Positioning
+
+x,y,z (0,0,0) by default is the top left corner.
+Higher x means downward, higher y means towards right. 
+If z is not specified then the compenent definer first gets to be on top.
+
+```
+Window{
+    visible: true
+    height: 200
+    width: 200
+
+    Rectangle    {
+        id : rect1
+        width: 100
+        height : 100
+        color : "red"
+        x : 50          //Here we are positioning the rectangle corder to 50,50
+        y : 50
+        opacity: 0.5
+        z: 1            //Higher z value gets to be on top
+    }
+
+    Rectangle    {
+        id : rect2
+        width: 100
+        height : 100
+        color : "blue"
+        x : 100         //Here we are positioning the rectangle corner to 150,150
+        y : 100
+        opacity: 0.5
+        z : 0
+    }
+}
+```
+
+NOTE:
+If there is a parent child relationship between components then the x,y,z would be relative to that parent and not the super parent window.
+
+## TapHandler
+
+It is a QML Type, just like rectangle and handles taps and cliks.
+source of QML types : https://doc.qt.io/qt-6/qtquick-qmlmodule.html
+
+```
+Rectangle    {
+        id : rect1
+        width: 100
+        height : 100
+        color : tapHandleText.pressed ? "red" : "blue"
+        opacity: tapHandleText.pressed ? 0.5 : 1
+
+        TapHandler{
+            id : tapHandleText
+        }
+    }
+```
