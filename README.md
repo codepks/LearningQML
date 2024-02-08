@@ -426,7 +426,7 @@ Within {} we add *javascript* code
 
 # Property Binding
 
-> Example 1
+> Static Binding
 
 ```
 Rectangle
@@ -439,4 +439,8 @@ Rectangle
 ```
 
 In the example above we have done property binding of *height* with *width* of Rectangle object.
+
+> Dynamic Binding
+
+Property bindings are a fundamental feature of QML. Typically, a property is initialized with its binding. However, the Binding type and Qt.binding() function allows the client to dynamically bind properties from any object at run-time, and modify the binding target when required (or when it becomes available).
 
