@@ -560,6 +560,7 @@ property var fonts: Qt.fontFamilies();
 # Signal and Slots
 
 ## Internal Signal and Slots
+
 ```
 Rectangle {
     id:myRectangle
