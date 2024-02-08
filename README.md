@@ -608,3 +608,104 @@ onEmitGreeting doesn't require any explicit connection as it is taken care by th
 For *function listen(message) {}* we have made the explicit connection in Component.onCompleted: {}
 
 ## External Signal and Slots 
+
+> Notifier QML FIle
+
+```
+Item {
+    property int count: 10
+    property alias  rectangleColor: myRectangle.color
+    width: myRectangle.width
+    height: myRectangle.height
+    signal notify(string myMessage)
+    property Receiver target: null
+
+    //In main.qml "target: myReceiver" calls the slot below and we..
+    //establish signal and slot connection
+    onTargetChanged: {
+        notify.connect(target.listen);
+    }
+
+    Rectangle {
+        id: myRectangle
+        width: 300
+        height: 400
+        color: "yellow"
+
+        Text {
+            id: myText
+            anchors.centerIn: parent
+            font.pointSize: 12
+            text: count
+        }
+
+        MouseArea {
+            id: myMouseArea
+            anchors.fill: parent
+            onClicked: {
+                count++;
+
+                //Emitting signal
+                notify(count);
+            }
+        }
+    }
+}
+```
+
+> Reciever QML File
+
+```
+Item {
+    property alias myReceiverColor : myReceiverRectangle.color
+    width: myReceiverRectangle.width
+    height: myReceiverRectangle.height
+
+    property int count: 0
+
+    //Defining the slot here
+    function listen(count)    {
+        myReceiverText.text=count;
+        console.log("I am listening to the signal and I am getting ..."+ count);
+    }
+
+    Rectangle {
+        id:myReceiverRectangle
+        width:300
+        height: 400
+        color: "yellow"
+
+        Text {
+            id:myReceiverText
+            anchors.centerIn: parent
+            text: "0"
+            font.pointSize: 12
+        }
+    }
+}
+```
+
+> Main QML File
+
+```
+
+Window {
+    width: 640
+    height: 480
+    visible: true
+    title: qsTr("External Components with Signals and Slots")
+
+    Notifier {
+        id: myNotifier
+        rectangleColor: "yellow"
+        // Populating "property Receiver target: null" in Notifier QML
+        target: myReceiver
+    }
+
+    Receiver {
+        id:myReceiver
+        myReceiverColor: "yellow"
+        anchors.right: parent.right
+    }
+}
+```
