@@ -500,3 +500,11 @@ The moment you click on greenRectangle, it will set a dynamic property binding:
 redRectangle.height=Qt.binding(function(){return redRectangle.width*2});
 ```
 and now after clicking blueRectangle it will follow height = width * 2
+
+
+# Global Functions
+
+Qt.quit();
+Qt.openUrlExternally("https://www.linkedin.com/in/cgeorge1978/");
+property var fonts: Qt.fontFamilies();
+  
