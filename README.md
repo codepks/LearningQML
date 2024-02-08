@@ -93,7 +93,7 @@ So we can use Composition here and use the MouseArea QML object in the Rectangle
 Now, the clicked signal is available in the MouseArea QML object and we can declare the slot onClicked : {}  to make the Rectangle clickable
 
 > Another Example
-
+```
 Rectangle 
 {
     id: signalRectangle
@@ -118,7 +118,7 @@ Rectangle
         }
     }
 }
-
+```
 In the example above we have use two QML objects, MouseArea and Text, both of which are derived from Item.
 
 NOTE:
