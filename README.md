@@ -501,6 +501,13 @@ redRectangle.height=Qt.binding(function(){return redRectangle.width*2});
 ```
 and now after clicking blueRectangle it will follow height = width * 2
 
+> Property Alias
+
+```
+property alias myReceiverColor : myReceiverRectangle.color
+``
+In the above statement, whatever the changes are made int he myReceiverColor would be reflected in myReceiverRectangle.color
+
 # Property Handlers
 
 Whenver we create a property, QT crates a *signal* that follows changes with the property.
@@ -552,6 +559,7 @@ property var fonts: Qt.fontFamilies();
   
 # Signal and Slots
 
+## Internal Signal and Slots
 ```
 Rectangle {
     id:myRectangle
@@ -598,3 +606,5 @@ slot : onEmitGreeting and function listen(message) {}
 onEmitGreeting doesn't require any explicit connection as it is taken care by the qml itself.
 
 For *function listen(message) {}* we have made the explicit connection in Component.onCompleted: {}
+
+## External Signal and Slots 
