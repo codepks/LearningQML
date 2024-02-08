@@ -140,3 +140,36 @@ Rectangle  {
     }
 }
 ```
+
+# Basic Types
+## Item Type
+Item type is a basic type for all visual types but has no visual appearance for itself.
+It has all basic features like anchoring, x,y,z etc whatever we have been playing with so far.
+
+It can be said as container of other QML objects. E.g. can contain multiple Image QML types.
+
+It is helpful in making our own **custom object**.
+
+```
+Window{
+    visible: true
+    height: 200
+    width: 200
+
+    Item {
+        id: myCustomObject
+        width: 100
+        height: 100
+        anchors.centerIn: parent
+        //color: "red"          //You cannot set color as it has no visual appearance
+
+        Rectangle
+        {
+            id : myrect
+            color: "red"
+            anchors.fill: parent
+        }
+    }
+}
+```
+In the code above we have made our custom object using Item and filled with Rectangle.
