@@ -513,6 +513,34 @@ onMyFirstNameChanged: {
     }
 ```
 
+**Component.onCompleted**
+
+```
+Rectangle {
+        id: rect1
+        width: 300
+        Text {
+            id: rect1Text
+            text: qsTr("rect1")
+        }
+        color: "dodgerblue"
+        anchors.centerIn: parent
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                myFirstName="Catalin";
+            }
+        }
+
+        Component.onCompleted: {
+            console.log("The property myFirstName is " + rect1Text.text);
+        }
+    }
+```
+This is called when component is initialized.
+
+
+
 
 # Global Functions
 
