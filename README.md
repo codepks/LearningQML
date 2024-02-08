@@ -316,4 +316,21 @@ Image {
     }
 ```
 
-Singals used here:
+> Singals used here:
+
+If we check in QT documentation of Text : https://doc.qt.io/qt-6/qml-qtquick-text.html
+we would find signals like :
+```
+lineLaidOut(object line)
+linkActivated(string link)
+linkHovered(string link)
+```
+These signals are always emitted on making Text {} qml object in a qml file.
+
+To access these in a a slot we use keyworks like 
+```
+onLineLaidOut : {}
+onLinkActivated : {}
+onLinkHovered : {}
+```
+withing {} we add *javascript* code
