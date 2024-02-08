@@ -424,6 +424,32 @@ onLinkHovered : {}
 ```
 Within {} we add *javascript* code
 
+## TextInput
+
+```
+ Rectangle    {
+        id : myRect
+        width: parent.width / 2
+        height: parent.height / 2
+        anchors.centerIn: parent
+
+        color : "yellow"
+
+        TextInput   {
+            id : textint
+            text: "Enter some value"
+            anchors.centerIn: parent
+
+            onEditingFinished:            {
+                console.log("done editing\n")
+        }
+    }
+ }
+```
+
+**editingFinished** is a signal.
+
+
 # Property Binding
 
 > Static Binding
@@ -710,3 +736,4 @@ Window {
     }
 }
 ```
+
