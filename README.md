@@ -205,4 +205,25 @@ Component {
 }
 ```
 
+## Rectangle 
+Let's create a circle from a Rectangle QML type
 
+```
+Rectangle
+    {
+        id : myrect
+        width: 100
+        height: 100
+        color: "red"
+        anchors.centerIn: parent
+        radius: width            //This is the one that makes the rectangle a circle
+
+        gradient : Gradient
+        {
+            GradientStop {position : 0.0; color : "red"}
+            GradientStop {position : 1.0; color : "blue"}
+        }
+    }
+```
+
+Note : If we simply make *Gradient{}* object and not use *gradient:Gradient{}* then it won't show the result. *gradient* is a property of Rectangle and it needs to be populated with *Gradient{}* object.
