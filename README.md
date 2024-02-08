@@ -492,3 +492,11 @@ Rectangle
     }
 }
 ```
+> Explaination
+
+If you click on blueRectangle, it will follow height = width * 1.5.
+The moment you click on greenRectangle, it will set a dynamic property binding:
+```
+redRectangle.height=Qt.binding(function(){return redRectangle.width*2});
+```
+and now after clicking blueRectangle it will follow height = width * 2
