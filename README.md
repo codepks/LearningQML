@@ -227,3 +227,60 @@ Rectangle
 ```
 
 Note : If we simply make *Gradient{}* object and not use *gradient:Gradient{}* then it won't show the result. *gradient* is a property of Rectangle and it needs to be populated with *Gradient{}* object.
+
+## Image
+qrc : QT resource collection file.
+Everything in qrc file get compiled right into the binary executable.
+
+```
+Image {
+        id: myImage
+        source: "Images/smile"
+
+        height: 100
+        fillMode: Image.PreserveAspectFit
+    }
+```
+
+PreserveAspectFit will keep the width value adjusted if height is already defined so that the original aspect ratio is maintained.
+
+```
+import QtQuick 2.12
+
+
+Window{
+    visible: true
+    height: 200
+    width: 200
+    title: "Hello World"
+    property int middle : height / 2  
+
+Image {
+        id: myImage
+        source: "Images/smile"
+        height: 100
+        fillMode: Image.PreserveAspectFit
+        
+        //positioning the image
+        x : 100
+        y : middle
+    }
+     
+    Image {
+        id: remoteImage
+        source: "https://someonlineimage.svg"
+        height: 100
+        fillMode: Image.PreserveAspectFit
+        
+        //positioning the image
+        x : 300
+        y : middle 
+         
+        //Online image may take time to Loader
+        //Let's track its progress via javascript
+
+        onProgressChanged: console.log(remoteImage.progress)
+        onStatusChanged: if(remoteImage.status == Image.Ready) console.log("Remote image was loaded")
+    }
+}
+```
