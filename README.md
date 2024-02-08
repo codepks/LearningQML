@@ -333,4 +333,4 @@ onLineLaidOut : {}
 onLinkActivated : {}
 onLinkHovered : {}
 ```
-withing {} we add *javascript* code
+Within {} we add *javascript* code
