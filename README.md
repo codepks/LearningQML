@@ -539,7 +539,8 @@ Rectangle {
 ```
 This is called when component is initialized.
 
-
+**Loader**
+It loads your blueprint component just like declaring an object and initializing it.
 
 
 # Global Functions
