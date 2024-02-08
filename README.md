@@ -550,3 +550,51 @@ Qt.quit();
 Qt.openUrlExternally("https://www.linkedin.com/in/cgeorge1978/");
 property var fonts: Qt.fontFamilies();
   
+# Signal and Slots
+
+```
+Rectangle {
+    id:myRectangle
+    width: 300+increment
+    height: 400
+    color: "red"
+    
+    //step 1. define a signal
+    signal emitGreeting(string myMessage)
+    
+    //step 3. this is a javascript type of slot that would be connected to signal later
+    function listen(message){
+        console.log("Hello, I am listening for signals and I got this message: "+ message);
+    }
+    
+    //on(Signal) name is the automatic signal definition
+    onEmitGreeting: {
+       console.log("Hello, I sensed the greeting was emitted.");
+    }
+    
+
+    //On mouse area click we want to emit the signal and invoke both the slots
+    MouseArea {
+       anchors.fill: parent
+       onClicked: {
+           //step 2. fire the signal
+           myRectangle.emitGreeting("Abracadabra....");
+           increment+=50;
+       }
+    }
+    
+    //step 4. connect the signal with the slot
+    Component.onCompleted: {
+       myRectangle.emitGreeting.connect(myRectangle.listen);
+    }
+}
+```
+
+In the example above we have created 1 signal and  two kinds of slots:
+signal :  signal emitGreeting(string myMessage)
+
+slot : onEmitGreeting and function listen(message) {}
+
+onEmitGreeting doesn't require any explicit connection as it is taken care by the qml itself.
+
+For *function listen(message) {}* we have made the explicit connection in Component.onCompleted: {}
