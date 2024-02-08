@@ -62,6 +62,69 @@ NOTE :
 2. The component at the top is parent
 3. QT uses parent child memory hirerchy for memory management, so if parent is destroyed, all the children are destroyed. That's why multiple parent thing does't work
 
+## Composition 
+```
+Rectangle 
+{
+    id: redRectangle
+    color: "red"
+    width: 150
+    height: 150
+    radius: 20
+    
+    MouseArea 
+    {
+        anchors.fill: parent
+        onClicked: 
+        {
+            console.log("You clicked red colour")
+            textToSay="red"
+        }
+    }
+}
+```
+
+> Question 
+How can be use clicked signal with Rectangle QML object ?
+
+Here we need to use MouseArea.
+So, in the code above MouseArea is derived from "Item" QML Object just like Rectangle is.
+So we can use Composition here and use the MouseArea QML object in the Rectangle QML object.
+Now, the clicked signal is available in the MouseArea QML object and we can declare the slot onClicked : {}  to make the Rectangle clickable
+
+> Another Example
+
+Rectangle 
+{
+    id: signalRectangle
+    color: "dodgerblue"
+    width: 150
+    height: 150
+    radius: 100
+    Text 
+    {
+        id: myText
+        text: textToSay
+        anchors.centerIn: parent
+    }
+    MouseArea 
+    {
+        id: roundMouseArea
+        anchors.fill: parent
+        onClicked: 
+        {
+            console.log("you clicked the circle");
+            myText.text="loop";
+        }
+    }
+}
+
+In the example above we have use two QML objects, MouseArea and Text, both of which are derived from Item.
+
+NOTE:
+since "text" is not a property of Rectangle, so in order to overlay Text on Rectangle we are making a Text { } object which too is derived from Item.
+
+
 ## Signal and Slots in QML
 ```
 Window{
