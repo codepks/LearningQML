@@ -424,3 +424,19 @@ onLinkHovered : {}
 ```
 Within {} we add *javascript* code
 
+# Property Binding
+
+> Example 1
+
+```
+Rectangle
+{
+    id: redRectangle
+    color:"red"
+    width: 50
+    height: width*1.5 //this is property binding
+}
+```
+
+In the example above we have done property binding of *height* with *width* of Rectangle object.
+
