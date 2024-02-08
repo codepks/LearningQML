@@ -505,7 +505,7 @@ and now after clicking blueRectangle it will follow height = width * 2
 
 ```
 property alias myReceiverColor : myReceiverRectangle.color
-``
+```
 In the above statement, whatever the changes are made int he myReceiverColor would be reflected in myReceiverRectangle.color
 
 # Property Handlers
