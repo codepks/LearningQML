@@ -23,7 +23,9 @@ return app.exec();
 
 
 **QGuiApplication** : It is a subclass of QCoreApplication and is helpful in integrating QT and QML.
+
 **QMLApplicationEngine** : It serves as an engine for loading and running QML-based applications.
+
 **QObject::connect** : objectCreationFailed singal is connected with exit slot.
 
 Finally we are loading the engine.
@@ -135,12 +137,11 @@ property double myDoubleProperty:9.4
 property bool myBoolProperty : true
 property url myUrlProperty : "http://www.linkedin.com"
 
-property var aNumberProperty :100
-property var aBoolProperty: true
-property var aStringProperty: "This is a string"
-property var anotherStringProperty: String("#FF008800")
+property var aVector3d:Qt.vector3d(10,20,30);
+property var anArray:[0,1,2,"three","four",(function(){return 5;}) ]
+property var anObject: {"Audi": 40000 , "Dacia":7000}
 ```
-var datatype can be used to store more complex data types
+**var** datatype can be used to store more complex data types
 
 
 ## Signal and Slots in QML
