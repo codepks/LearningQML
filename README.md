@@ -143,6 +143,13 @@ property var anObject: {"Audi": 40000 , "Dacia":7000}
 ```
 **var** datatype can be used to store more complex data types
 
+> Populating available structures
+
+```
+property var aRect:Qt.rect(17,56,46,10)
+console.log("The components of aRect are : X="+aRect.x+" Y="+aRect.y+" width="+aRect.width+ " height="+aRect.height);
+```
+
 
 ## Signal and Slots in QML
 ```
