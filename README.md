@@ -148,7 +148,11 @@ It has all basic features like anchoring, x,y,z etc whatever we have been playin
 
 It can be said as container of other QML objects. E.g. can contain multiple Image QML types.
 
+>When to use
+
 It is helpful in making our own **custom object**.
+Item is useful for grouping items together. You can use Item to create an invisible container to hold other components. 
+*So it facilitates handling children and processing properties such as width and height.*
 
 ```
 Window{
@@ -173,3 +177,32 @@ Window{
 }
 ```
 In the code above we have made our custom object using Item and filled with Rectangle.
+
+## Component
+
+The component encapsulates the QML types within, as if they were defined in a separate QML file, and is not loaded until requested (in this case, by the two Loader objects). Because Component is not derived from Item, you cannot anchor anything to it.
+
+When declaring delegates, Component is used because there are several delegate **items** that must be created. A single Item doesn't work here. You can think of Component as a template that you can create objects from.
+
+As a QML concept, all reusable things are called components. You can define a component in multiple ways, but one easy way is to create a .qml file and name it as you name your component. i.e: Button.qml or Switch.qml. When the QML engine loads that file, you can use it as buttons or switches.
+
+Another way to define a component is to use Component {} in a .qml file. This allows you to define a new component inline. 
+
+```
+Item {
+    id: itemWidget
+
+    Rectangle { id: one }
+    Rectangle { id: two }
+}
+```
+```
+Component {
+    id: componentWidget
+
+    Rectangle { id: one }
+    Rectangle { id: two }
+}
+```
+
+
