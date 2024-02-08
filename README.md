@@ -321,7 +321,7 @@ Image {
 If we check in QT documentation of Text : https://doc.qt.io/qt-6/qml-qtquick-text.html
 we would find signals like :
 ```
-lineLaidOut(object line)
+lineLaidOut(object line)    
 linkActivated(string link)
 linkHovered(string link)
 ```
