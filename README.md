@@ -501,6 +501,18 @@ redRectangle.height=Qt.binding(function(){return redRectangle.width*2});
 ```
 and now after clicking blueRectangle it will follow height = width * 2
 
+# Property Handlers
+
+Whenver we create a property, QT crates a *signal* that follows changes with the property.
+For the property myFirstName, onMyFirstNameChanged is the slot created in the qml
+```
+property  string myFirstName: "George"
+
+onMyFirstNameChanged: {
+        console.log("The new Property 'myFirstName' is "+myFirstName);
+    }
+```
+
 
 # Global Functions
 
