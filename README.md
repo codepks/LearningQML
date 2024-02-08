@@ -284,3 +284,36 @@ Image {
     }
 }
 ```
+
+## Text
+
+```
+   Text {
+        id: myText
+        anchors.centerIn: parent
+        font.pixelSize: 20
+
+        //You can insert html in the text
+
+        text: ("<html> <b> Hello </b> <i> <font color = 'green'> World </font> </i> </html> <br>
+                    <a href='http://www.google.com'> web link </a>")
+
+
+        onLinkActivated:
+        {
+            Qt.openUrlExternally(link) //If we don't put this then link wouldn't be clikable
+        }
+
+        onLinkHovered:
+        {
+            console.log("Hovering over : " + link)
+
+            if(link)
+                myText.font.bold = true
+            else
+                myText.font.bold = false
+        }
+    }
+```
+
+Singals used here:
