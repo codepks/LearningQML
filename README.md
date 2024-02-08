@@ -124,6 +124,24 @@ In the example above we have use two QML objects, MouseArea and Text, both of wh
 NOTE:
 since "text" is not a property of Rectangle, so in order to overlay Text on Rectangle we are making a Text { } object which too is derived from Item.
 
+## Data Types
+> Available Data types
+bool, double, enum, int, list, real, string, url, var
+
+```
+property string myStringProperty: "value"
+property int myIntProperty:42
+property double myDoubleProperty:9.4
+property bool myBoolProperty : true
+property url myUrlProperty : "http://www.linkedin.com"
+
+property var aNumberProperty :100
+property var aBoolProperty: true
+property var aStringProperty: "This is a string"
+property var anotherStringProperty: String("#FF008800")
+```
+var datatype can be used to store more complex data types
+
 
 ## Signal and Slots in QML
 ```
