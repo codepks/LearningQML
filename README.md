@@ -1166,7 +1166,7 @@ Like other view types,
 2. For each entry in the model, the delegate is instantiated
 
 
-
+Repeater is repeating row in the example above and it can repeat column too if placed inside a column
 
 
 # Sources 
