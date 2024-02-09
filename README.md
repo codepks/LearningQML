@@ -778,6 +778,80 @@ Window {
     }
 }
 ```
+# Custom QML Objects
+
+## Custom Button
+
+```
+//In order to make custom component we use Item
+
+Item{
+    id : root
+
+    width: 70
+    height: 70
+
+    property color color: "blue"
+    property color colorClicked: "red"
+    property string title: "Click Me"
+
+    Rectangle    {
+        id : myRect
+
+        //The rectange has to take the shape of the item..
+        //In order to do that we fill the parent
+        anchors.fill: parent
+        color: root.color
+
+        Text {
+            id: rectText
+            text: root.title
+            anchors.centerIn: parent
+        }
+
+        MouseArea{
+            //We need to make the whoe rectangle clickable
+            //In order to do that we need to fill the parent
+            anchors.fill: parent
+            onPressed: myRect.color = root.colorClicked
+            onReleased: myRect.color = root.color
+        }
+    }
+}
+```
+
+## Main 
+
+```
+Window {
+    width: 640
+    height: 480
+    visible: true
+    title: qsTr("External Components with Signals and Slots")
+
+    CustomButton{
+        id : rect1
+        color: "yellow"        //filling up the color parameter of the Custom Button
+        x : 100
+        y : 100
+    }
+
+    CustomButton{
+        id : rect2
+        color: "yellow"
+        x : 200
+        y : 100
+    }
+
+    CustomButton{
+        id : rect3
+        color: "yellow"
+        x : 300
+        y : 100
+    }
+}
+```
+
 
 
 
