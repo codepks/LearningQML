@@ -918,6 +918,23 @@ Rectangle
 
 ```
 
+# Layouts
+
+## Column
+
+Using the previous code in "Draggable Object in Z" we can make the column layout
+```
+ Column  {
+        spacing : 2
+        anchors.centerIn: parent
+
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+    }
+```
+
+
 Sources : 
 1. https://github.com/georgecatalin/Qt-Quick-and-QML-For-Beginners-The-Fundamentals
 2. https://www.udemy.com/course/qml-for-beginners
