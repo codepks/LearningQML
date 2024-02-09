@@ -980,12 +980,9 @@ Grid  {
 ## ColumnLayout
 ColumnLayout is a convenience utility, but it is nothing more than a grid with one column.
 
+>Column is a Positioner, while a ColumnLayout is a Layout. In contrast to positioners, Qt Quick Layouts can also resize their items. 
 
-
-## Difference
-Column is a Positioner, while a ColumnLayout is a Layout
-
-Qt Quick Layouts can also be used to arrange Qt Quick items in a user interface. **They manage both the positions and the sizes** of items on a declarative user interface, and are **well suited for resizable user interfaces**.
+>Qt Quick Layouts can also be used to arrange Qt Quick items in a user interface. **They manage both the positions and the sizes** of items on a declarative user interface, and are **well suited for resizable user interfaces**.
 
 >Column can be told the positions, but layouts like ColumnLayout have to calculate the position themselves. Setting the width inside a ColumnLayout is bad, but in a Column it's ok
 
