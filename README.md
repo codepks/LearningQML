@@ -1084,6 +1084,51 @@ ListModel {
 }
 ```
 
+## ListModel with ListView
+
+```
+Window {
+    width: 200
+    height: 300
+    visible: true
+    title: qsTr("External Components with Signals and Slots")
+
+
+    ListModel {
+
+        id : nameModel2
+        ListElement {
+            name: "Bill Smith"
+            number: "555 3264"
+        }
+        ListElement {
+            name: "John Brown"
+            number: "555 8426"
+        }
+        ListElement {
+            name: "Sam Wise"
+            number: "555 0473"
+        }
+    }
+
+
+    ListView
+    {
+        id : firstList
+        anchors.centerIn: parent
+
+        width: 180
+        height: 200
+
+        model:nameModel2
+
+        delegate: Text {
+               text: name + ": " + number
+               font.pixelSize: 25
+           }
+    }
+}
+```
 
 
 # Sources 
