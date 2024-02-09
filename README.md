@@ -1045,6 +1045,43 @@ ListView requires 2 parameters:
 1. Model : Inputs the data to be displayes
 2. Delegate : Provides the template on how the data should be displayed
 
+**ListElement**
+List elements are defined inside ListModel definitions, and represent items in a list that will be displayed using ListView or Repeater items.
+
+> ListView
+
+```
+ListView {
+    anchors.fill: parent
+    model: fruitModel
+    delegate: Row {
+        Text { text: "Fruit: " + name }
+        Text { text: "Cost: $" + cost }
+    }
+}
+```
+
+> ListModel
+
+```
+ListModel {
+    id: fruitModel
+
+    ListElement {
+        name: "Apple"
+        cost: 2.45
+    }
+    ListElement {
+        name: "Orange"
+        cost: 3.25
+    }
+    ListElement {
+        name: "Banana"
+        cost: 1.95
+    }
+}
+```
+
 
 
 # Sources 
