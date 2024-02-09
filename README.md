@@ -982,8 +982,11 @@ Grid  {
 
 ## Features
 > **Alignment** : Layout.alignment
+
 > **Resizable item** : Layout.fillwidth and Layout
+
 > **Size Constraint** :  Layout.minimumWidth, Layout.preferredWidth and Layout.maximumWidth
+
 > **Spacings** : spacing, rowSpacing or columnSpacing
 
 
