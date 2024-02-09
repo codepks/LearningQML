@@ -1087,27 +1087,36 @@ ListModel {
 ## ListModel with ListView
 
 ```
-Window {
-    width: 200
-    height: 300
-    visible: true
-    title: qsTr("External Components with Signals and Slots")
-
-
-    ListModel {
-
-        id : nameModel2
+ListModel
+    {
+        id : nameModel
         ListElement {
-            name: "Bill Smith"
-            number: "555 3264"
+            name : "Prashant"
+            gender : "Male"
+            rgbColor : "yellow"
         }
+
         ListElement {
-            name: "John Brown"
-            number: "555 8426"
+            name : "Simbi"
+            gender : "Female"
+            rgbColor : "red"
         }
-        ListElement {
-            name: "Sam Wise"
-            number: "555 0473"
+    }
+
+    Component {
+
+        id : prototype
+
+        Rectangle
+        {
+            width: 300
+            height: 100
+            color: rgbColor
+
+            Text {
+
+                text: qsTr( "Name is " + name + "," + "Gender is " + gender)
+            }
         }
     }
 
@@ -1120,14 +1129,10 @@ Window {
         width: 180
         height: 200
 
-        model:nameModel2
+        model:nameModel
 
-        delegate: Text {
-               text: name + ": " + number
-               font.pixelSize: 25
-           }
+        delegate:prototype
     }
-}
 ```
 
 
