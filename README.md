@@ -852,7 +852,7 @@ Window {
 }
 ```
 
-## Draggable Object
+## Draggable Object in X and Y
 1. We will learn to use javascript here
 2. We will learn drag.target in MouseArea
 
@@ -897,6 +897,25 @@ Rectangle   {
     }
 ```
 
+## Draggable Object in Z
+
+Make a custom compoenent like below and then you can instantiate it in the main.qml file
+
+```
+Rectangle
+{
+    id : rect
+    width : 100
+    height : 100
+
+    MouseArea  {
+    anchors.fill : parent
+    drag.target : parent
+    onClicked : parent.z++
+    }
+}
+
+```
 
 Sources : 
 1. https://github.com/georgecatalin/Qt-Quick-and-QML-For-Beginners-The-Fundamentals
