@@ -852,7 +852,50 @@ Window {
 }
 ```
 
+## Draggable Object
+1. We will learn to use javascript here
+2. We will learn drag.target in MouseArea
 
+```
+Rectangle   {
+        id : myRect
+        color : "yellow"
+
+        width: 100
+        height: 100
+
+        //Setting the initial position
+        x : 100
+        y : 100
+
+        Text {
+            id: rectText
+            text: qsTr("text")
+            anchors.centerIn: myRect
+        }
+
+        MouseArea        {
+            anchors.fill: myRect
+
+            //This is the line which enables dragging for rectangle
+            drag.target: myRect
+        }
+
+        //This is the javascript function which has access to all the ...
+        // Rectangle members just like x and y
+        function updateXnY() {
+            rectText.text = x + "X" + y;
+            console.log(x + "X" + y)
+        }
+
+        //we need to change the x and y value on screen (it changes backscreen too)
+
+        onXChanged: updateXnY()
+        onYChanged: updateXnY()
+
+        Component.onCompleted: updateXnY() //For initial value
+    }
+```
 
 
 Sources : 
