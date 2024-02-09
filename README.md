@@ -989,6 +989,50 @@ Grid  {
 
 > **Spacings** : spacing, rowSpacing or columnSpacing
 
+## RowLayout
+
+```
+RowLayout {
+    id: layout
+    anchors.fill: parent
+    spacing: 6
+    Rectangle {
+        id : auzureRect
+        color: 'azure'
+        Layout.fillWidth: true
+        Layout.minimumWidth: 50
+        Layout.preferredWidth: 100
+        Layout.maximumWidth: 300
+        Layout.minimumHeight: 150
+        Text {
+            anchors.centerIn: parent
+            text: parent.width + 'x' + parent.height
+        }
+    }
+    Rectangle {
+        id : plumRect
+        color: 'plum'
+        Layout.fillWidth: true
+        Layout.minimumWidth: 100
+        Layout.preferredWidth: 200
+        Layout.preferredHeight: 100
+        Text {
+            anchors.centerIn: parent
+            text: parent.width + 'x' + parent.height
+        }
+    }
+}
+```
+> Explanation
+
+In the code above ;
+1. Both azureRect and plumRect have **filledWidth** and that's why they are side to side
+2. Both have minimumWidth to put a demarcation on the minimum width on resizing of the window
+3. azureRect has maximum width set to benchmark the maximum width for columnlayout on resizing the window
+4. prefferred width is like the fixed sizes in the window
+
+
+
 
 
 # Sources 
