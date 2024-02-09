@@ -449,6 +449,48 @@ Within {} we add *javascript* code
 
 **editingFinished** is a signal.
 
+## MouseArea
+It is an  invisible item that is generally used along with a visible iteam like Rectangle.
+
+```
+Rectangle
+    {
+        id : myRect
+
+        width: parent.width / 2
+        height: parent.height / 2
+        anchors.centerIn: parent
+
+        color : "yellow"
+
+        MouseArea
+        {
+            id: mouseArea
+
+            //1. need to fill the parent else it willcover only a small square area in (0,0)
+            anchors.fill: parent
+
+            //2. Helpful in case of multiple buttons available in your mouse
+            acceptedButtons: Qt.LeftButton | Qt.RightButton
+
+            //3. The above statement is necessary for conditional printing below
+            onClicked:
+            {
+                console.log("Clicked : " + mouse.button)
+                if(mouse.button === Qt.LeftButton) myRect.color = "yellow"
+                if(mouse.button === Qt.RightButton) myRect.color = "red"
+            }
+
+            //4. This should be enable to get the mouse coordinates
+            hoverEnabled: true
+
+            onPositionChanged: console.log("The mouse position is : " + mouseX + " " + mouseY)
+            onEntered: myRect.color = "orange"
+            onExited: myRect.color = "blue"
+        }
+    }
+```
+
 
 # Property Binding
 
