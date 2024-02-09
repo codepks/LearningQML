@@ -918,7 +918,11 @@ Rectangle
 
 ```
 
-# Layouts
+# Item Positioners
+
+Positioner items are container items that manage the positions of items in a declarative user interface. Positioners behave in a similar way to the layout managers used with standard Qt widgets, except that they are also containers in their own right.
+
+Positioners make it easier to work with many items when they need to be arranged in a regular layout.
 
 ## Column
 
@@ -935,21 +939,6 @@ Using the previous code in "Draggable Object in Z" we can make the column layout
         CustomButton{ }
     }
 ```
-
-## ColumnLayout
-ColumnLayout is a convenience utility, but it is nothing more than a grid with one column.
-
-
-
-## Difference
-Column is a Positioner, while a ColumnLayout is a Layout
-
->Positioner items are container items that manage the positions of items in a declarative user interface. Positioners behave in a similar way to the layout managers used with standard Qt widgets, except that they are also containers in their own right.
->Positioners make it easier to work with many items when they need to be arranged in a regular layout.
->Qt Quick Layouts can also be used to arrange Qt Quick items in a user interface. They manage both the positions and the sizes of items on a declarative user interface, and are **well suited for resizable user interfaces**.
-
->Column can be told the positions, but layouts like ColumnLayout have to calculate the position themselves. Setting the width inside a ColumnLayout is bad, but in a Column it's ok
-
 
 ## Row
 
@@ -986,8 +975,19 @@ Grid  {
         CustomButton{ }
 }
 ```
+# Layouts
+
+## ColumnLayout
+ColumnLayout is a convenience utility, but it is nothing more than a grid with one column.
 
 
+
+## Difference
+Column is a Positioner, while a ColumnLayout is a Layout
+
+Qt Quick Layouts can also be used to arrange Qt Quick items in a user interface. **They manage both the positions and the sizes** of items on a declarative user interface, and are **well suited for resizable user interfaces**.
+
+>Column can be told the positions, but layouts like ColumnLayout have to calculate the position themselves. Setting the width inside a ColumnLayout is bad, but in a Column it's ok
 
 # Sources 
 1. https://github.com/georgecatalin/Qt-Quick-and-QML-For-Beginners-The-Fundamentals
