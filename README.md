@@ -1034,6 +1034,16 @@ In the code above ;
 4. prefferred width is like the fixed sizes in the window
 
 
+# Flickable
+
+## ListView
+Listview displays data from models created by either 
+1. QML type : ListModel , XMLListModel
+2. C++ Item : QAbstractItemModel or  QAbstractListModel
+
+ListView requires 2 parameters:
+1. Model : Inputs the data to be displayes
+2. Delegate : Provides the template on how the data should be displayed
 
 
 
