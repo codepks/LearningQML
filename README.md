@@ -989,6 +989,8 @@ Grid  {
 
 > **Spacings** : spacing, rowSpacing or columnSpacing
 
+> **Implicit Width** : Defines the natural width or height of the Item if no width or height is specified. For image and text.
+
 ## RowLayout
 
 ```
