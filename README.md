@@ -922,6 +922,8 @@ Rectangle
 
 ## Column
 
+Column is a type that positions its child items along a single column. It can be used as a convenient way to vertically position a series of items *without using anchors* .
+
 Using the previous code in "Draggable Object in Z" we can make the column layout
 ```
  Column  {
@@ -933,6 +935,19 @@ Using the previous code in "Draggable Object in Z" we can make the column layout
         CustomButton{ }
     }
 ```
+
+## ColumnLayout
+ColumnLayout is a convenience utility, but it is nothing more than a grid with one column.
+
+
+
+## Differencet
+>Positioner items are container items that manage the positions of items in a declarative user interface. Positioners behave in a similar way to the layout managers used with standard Qt widgets, except that they are also containers in their own right.
+
+Positioners make it easier to work with many items when they need to be arranged in a regular layout.
+
+Qt Quick Layouts can also be used to arrange Qt Quick items in a user interface. They manage both the positions and the sizes of items on a declarative user interface, and are well suited for resizable user interfaces.
+
 
 ## Row
 
@@ -970,6 +985,8 @@ Grid  {
 }
 ```
 
-Sources : 
+
+
+# Sources 
 1. https://github.com/georgecatalin/Qt-Quick-and-QML-For-Beginners-The-Fundamentals
 2. https://www.udemy.com/course/qml-for-beginners
