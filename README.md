@@ -1140,6 +1140,34 @@ ListModel
 //Todo
 
 # Repeater
+We can create multiple instances based on given model.
+
+```
+    Component  {
+        id : aRect
+        Rectangle {
+            width: 100; height: 40
+            border.width: 1
+            color: "yellow"
+        }
+    }
+
+
+    Row {
+        Repeater {
+            model: 3
+            delegate: aRect
+        }
+    }
+```
+
+Like other view types, 
+1. Repeater has a model and a delegate
+2. For each entry in the model, the delegate is instantiated
+
+
+
+
 
 # Sources 
 1. https://github.com/georgecatalin/Qt-Quick-and-QML-For-Beginners-The-Fundamentals
