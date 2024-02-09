@@ -851,6 +851,7 @@ Window {
     }
 }
 ```
+# Dragging
 
 ## Draggable Object in X and Y
 1. We will learn to use javascript here
