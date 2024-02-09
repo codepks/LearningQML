@@ -277,6 +277,8 @@ As a QML concept, all reusable things are called components. You can define a co
 
 Another way to define a component is to use Component {} in a .qml file. This allows you to define a new component inline. 
 
+Components cannot declare new properties. e.g. property var something etc
+
 ```
 Item {
     id: itemWidget
