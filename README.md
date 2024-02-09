@@ -946,7 +946,29 @@ Using the previous code in "Draggable Object in Z" we can make the column layout
         CustomButton{ }
     }
 ```
+## Grid
 
+```
+Grid  {
+        spacing : 2
+
+        //rows and columns values decides the layout
+        rows : 3
+        columns: 3
+
+        anchors.centerIn: parent
+
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+        CustomButton{ }
+}
+```
 
 Sources : 
 1. https://github.com/georgecatalin/Qt-Quick-and-QML-For-Beginners-The-Fundamentals
