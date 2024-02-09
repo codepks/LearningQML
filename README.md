@@ -779,3 +779,8 @@ Window {
 }
 ```
 
+
+
+Sources : 
+1. https://github.com/georgecatalin/Qt-Quick-and-QML-For-Beginners-The-Fundamentals
+2. https://www.udemy.com/course/qml-for-beginners
