@@ -7,7 +7,10 @@ source : Udemy : QML For Beginners
 
 ## C++ Backend
 ```
-QGuiApplication app(argc, argv);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#endif
+    QGuiApplication app(argc, argv);
 QQmlApplicationEngine engine;
 const QUrl url(u"qrc:/buildq-2-8/Main.qml"_qs);
 QObject::connect(
@@ -1167,6 +1170,9 @@ Like other view types,
 
 
 Repeater is repeating row in the example above and it can repeat column too if placed inside a column
+
+# C++ Integration
+
 
 
 # Sources 
